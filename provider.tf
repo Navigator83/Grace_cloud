@@ -1,11 +1,5 @@
-# Configure the AWS Provider
+# Creating vpc for a server.
 
 provider "aws" {
-  version = "~> 2.0"
-  region  = "eu-west-1"
+    region = "eu-west-2"
 }
-
-
-
-
-

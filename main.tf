@@ -1,7 +1,7 @@
 #Creating aws network for a project
 
 resource "aws_vpc" "Grace_work" {
-  cidr_block           = var.vpc-cidr
+  cidr_block           = "10.0.0.0/16"
   instance_tenancy     = "default"
   enable_dns_hostnames = true
   enable_dns_support   = true
@@ -15,7 +15,7 @@ resource "aws_vpc" "Grace_work" {
 
 resource "aws_subnet" "prod-pub-sub1" {
   vpc_id     = aws_vpc.Grace_work.id
-  cidr_block = var. prod-pub-sub1
+  cidr_block = "10.0.0.0/24"
 
   tags = {
     Name = "prod-pub-sub1"
@@ -26,7 +26,7 @@ resource "aws_subnet" "prod-pub-sub1" {
 
 resource "aws_subnet" "prod-pub-sub2"  {
   vpc_id     = aws_vpc.Grace_work.id
-  cidr_block = var.prod-pub-sub2
+  cidr_block = "10.0.1.0/24"
 
   tags = {
     Name =  "prod-pub-sub2"
@@ -37,7 +37,7 @@ resource "aws_subnet" "prod-pub-sub2"  {
 
 resource  "aws_subnet" "prod-pub-sub3" {
   vpc_id     = aws_vpc.Grace_work.id
-  cidr_block = var.prod-pub-sub3
+  cidr_block = "10.0.2.0/24"
 
   tags = {
     Name = "prod-pub-sub3"
@@ -48,7 +48,7 @@ resource  "aws_subnet" "prod-pub-sub3" {
 
 resource "aws_subnet" "prod-priv-sub1" {
   vpc_id     = aws_vpc.Grace_work.id
-  cidr_block = var.prod-priv-sub1
+  cidr_block = "10.0.3.0/24"
 
   tags = {
     Name = "prod-priv-sub1"
@@ -59,7 +59,7 @@ resource "aws_subnet" "prod-priv-sub1" {
 
 resource "aws_subnet" "prod-priv-sub2" {
   vpc_id     = aws_vpc.Grace_work.id
-  cidr_block = var.prod-priv-sub2
+  cidr_block = "10.0.4.0/24"
 
   tags = {
     Name = "prod-priv-sub2"
